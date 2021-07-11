@@ -4,7 +4,7 @@
 // <?php
 // get data from DB
 $Id = $_GET["id"];
-$query = "SELECT * FROM users_224 where id=" . $Id;
+$query = "SELECT * FROM users_224 where idres=" . $Id;
 // echo $query;
 $result = mysqli_query($connection, $query);
 if ($result) {
@@ -65,7 +65,7 @@ if ($result) {
         </li>
     </ul>
             <section  class="edit-delete">
-        <a href="#" class="edit" id="edit"><img src="images/edit.png"></a > <a href="delete.php?id=<?php echo($row['id'])?>" class="edit"  id="delete"><img src="images/delete.png"></a>
+        <a href="#" class="edit" id="edit"><img src="images/edit.png"></a > <a href="delete.php?idres=<?php echo($row['idres'])?>" class="edit"  id="delete"><img src="images/delete.png"></a>
           </section>  
           <section class="wrapper">
                 <section class="status">
@@ -110,7 +110,7 @@ if ($result) {
                </b> </h4><form action="save1.php">
                     <span id="desc"><?php echo(($row['response'])? $row['response']:'Thank you for helping us create a better world! our recpiects will answer to you soon as possible.') ;?>
             </b></span>
-            <input type=hidden  name='id' value='<?php echo($row['id'])?>'></span></form>
+            <input type=hidden  name='id' value='<?php echo($row['idres'])?>'></span></form>
                 </div>
             </section>
         </main>

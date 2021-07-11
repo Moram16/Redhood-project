@@ -4,7 +4,7 @@
 $Id =mysqli_real_escape_string($connection, $_GET['id']);
 $response = mysqli_real_escape_string($connection, $_GET['response']);
 
-$query = "UPDATE users_224  SET response='$response'  where id=$Id";
+$query = "UPDATE users_224  SET response='$response'  where idres=$Id";
 
 
 $result = mysqli_query($connection,$query);
@@ -16,7 +16,7 @@ if (!$result) {
     echo "failed";
     die("DB query failed.");
 }
-header('Location:http://localhost/redhood/objectM.php?id='.$Id );
+header('Location:objectM.php?id='.$Id );
 
 
     //close DB connection

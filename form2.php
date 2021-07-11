@@ -4,7 +4,7 @@
     $state  = "insert";
     if(isset($_GET['id'])){
     $Id = $_GET['id'];
-
+        
     $query     = "SELECT * FROM tbl_users_224 where id=" . $Id;
 
     $result = mysqli_query($connection, $query);
@@ -249,7 +249,7 @@
                                          <div class="form-row">
                                              <div class="col-md-4 mb-3 form-group">
                                                  <section for="validationCustom08">Photo:</section>
-                                                 <input type="file" class="form-control" id="inputGroupFile02" name="photo" value="<?php echo($state=='edit'? $row['photo']:'https://www.pinclipart.com/picdir/middle/379-3796154_profile-clipart-john-doe-circle-png-download.png') ?> ">
+                                                 <input type="file" class="form-control" id="inputGroupFile02" name="photo" value="<?php echo($state=='edit'? $row['photo']:'https://www.pinclipart.com/picdir/middle/379-3796154_profile-clipart-john-doe-circle-png-download.png')?>">
 
                                              </div>
                                          </div>

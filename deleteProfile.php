@@ -12,7 +12,7 @@ if (!$result) {
 alert("this profile is remove");
 </script>
 <?php
-header('Location:http://localhost/redhood/homepage.html' );
+header('Location:homepage.html' );
 
 //close DB connection
 mysqli_close($connection);

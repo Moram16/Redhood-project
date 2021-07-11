@@ -1,10 +1,12 @@
   <?php include 'conction.php';
     $result = false;
     $state  = "insert";
-
+    $Id = $_POST['id'];
+    $Photo=$_POST['photo'];
+    $Name=$_POST['name'];
     if (isset($_GET['id'])) {
         $Id = $_GET['id'];
-
+       
         $query     = "SELECT * FROM users_224 where id=" . $Id;
 
         $result = mysqli_query($connection, $query);
@@ -83,7 +85,7 @@
               <section class="select-box">
                   <div class="shira-top">
                       <a href="#" class="shira-pic">
-                          <img src="images/shira.png">Shira Levy
+                          <img src="<?php echo ($Photo) ?>"><?php echo ($Name )?>
                       </a>
                   </div>
                   <!--headline-->

@@ -5,21 +5,22 @@ $Id = $_GET["id"];
 $query1 = "SELECT * FROM tbl_users_224 where id= ".$Id." and type ="."'M'";
 
 
-// echo $query;
 $result1 = mysqli_query($connection, $query1);
 
 if ($result1) {
     $row1 = mysqli_fetch_assoc($result1); //there is only 1 item
     if($row1['type']!='M'){
+        
         die("DB query failed.");
     }
-} else die("DB query failed.");
-$query = "SELECT * FROM users_224 order by date";
+}
+
+$query = "SELECT * FROM users_224 ";
 $result = mysqli_query($connection, $query);
 
 if ($result) {
     $row = mysqli_fetch_assoc($result); //there is only 1 item
-  
+   
 } else die("DB query failed.");
 //release returned data
 ?>
@@ -102,9 +103,9 @@ if ($result) {
             
             echo '<span >' .$row["name"]. '</span>';
            echo '<span >' .$row["phone"]. '</span>';
-           echo '<span class="attack" data-attackid="' .$row["attack"]. '" id="'.$row["attack"] .'">' .$row["attack"]. '</span>';
+           echo '<span class="attack" data-attackid="' .$row["attack"]. '" id="'.$row["attack"] .'">' . '</span>';
            echo '<span >' .$row["date"]. '</span>';
-           echo '<a href="objectM.php?id=' . $row["id"] . '" class="btnbtn">See report</a>';
+           echo '<a href="objectM.php?id='.$row["idres"].'" class="btnbtn">See report </a>';
            echo '</section>';
        }
        mysqli_free_result($result);

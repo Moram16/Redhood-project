@@ -3,8 +3,25 @@
 
 // <?php
 // get data from DB
-$Id = $_GET["id"];
-$query = "SELECT * FROM users_224 where id=" . $Id;
+
+  
+
+$Id1 = $_GET["id"];
+$query1 = "SELECT * FROM tbl_users_224 where id= ".$Id1." and type ="."U";
+
+
+// echo $query;
+$result1 = mysqli_query($connection, $query1);
+
+if ($result1) {
+    $row1 = mysqli_fetch_assoc($result1); //there is only 1 item
+    if($row1['type']!='U'){
+        die("DB query failed.");
+    }
+}
+
+$Id = $_GET["idres"];
+$query = "SELECT * FROM users_224 where idres=" . $Id;
 $result = mysqli_query($connection, $query);
 if ($result) {
     $row = mysqli_fetch_assoc($result); //there is only 1 item with id=X
@@ -64,7 +81,7 @@ if ($result) {
         </li>
     </ul>
             <section  class="edit-delete">
-        <a href="form1.php?id=<?php echo($row['id'])?>" class="edit" id="edit"><img src="images/edit.png"></a > <a href="delete.php?id=<?php echo($row['id'])?>" class="edit"  id="delete"><img src="images/delete.png"></a>
+        <a href="profileU.php?id=<?php echo $Id1 ?>&idres=<?php echo $Id?>" class="edit" id="edit"><img src="images/edit.png"></a > <a href="delete.php?idres=<?php echo($row['idres'])?>" class="edit"  id="delete"><img src="images/delete.png"></a>
           </section>  
           <section class="wrapper">
                 <section class="status">
@@ -91,7 +108,7 @@ if ($result) {
                 <div class="desc"  id="desc">
                     <h4><b>The Description of attack</b></h4><form action="save1.php">
                  <?php echo  '<span>' . $row["descript"] .'</span>' ?>
-                 <input type=hidden  name='id' value='<?php echo($row['id'])?>'></span></form></div>
+                 <input type=hidden  name='idres' value='<?php echo($row['idres'])?>'></span></form></div>
                 <div class="listen">
                     <button>
                 Listen to recording

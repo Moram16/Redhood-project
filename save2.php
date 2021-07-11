@@ -36,7 +36,7 @@ $result = mysqli_query($connection,$query);
 if (!$result) {
     die("DB query failed.");
 }
- header('Location:http://localhost/redhood/profile'.$type.'.php?id='.$id );
+ header('Location:profile'.$type.'.php?id='.$id );
 
 //close DB connection
 mysqli_close($connection);

@@ -1,6 +1,6 @@
 <?php include 'conction.php'; 
-$Id =mysqli_real_escape_string($connection, $_GET['id']);
-$query = "DELETE FROM users_224 where id=".$Id; 
+$Id =mysqli_real_escape_string($connection, $_GET['idres']);
+$query = "DELETE FROM users_224 where idres=".$Id; 
 $result = mysqli_query($connection,$query);
   if (!$result) { 
       die("DB query failed.");  }
@@ -9,7 +9,7 @@ $result = mysqli_query($connection,$query);
 alert("this profile is remove");
 </script>
 <?php
-header('Location:http://localhost/redhood/homepage.html' );
+header('Location:homepage.html' );
 
 //close DB connection
 mysqli_close($connection);
